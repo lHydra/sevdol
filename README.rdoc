@@ -1,3 +1,4 @@
 == README
 
 {<img src="https://gemnasium.com/lHydra/sevdol.svg" alt="Dependency Status" />}[https://gemnasium.com/lHydra/sevdol]
+{<img src="https://travis-ci.org/lHydra/sevdol.svg?branch=feature%2Fg-add-travis" alt="Build Status" />}[https://travis-ci.org/lHydra/sevdol]
