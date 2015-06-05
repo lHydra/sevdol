@@ -1,6 +1,7 @@
 language: ruby
 rvm:
   - "2.0.0"
+gemfile:
+  - gemfiles/gemfile-travis
 script:
-  - gem install nokogiri
   - bundle exec rake
