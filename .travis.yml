@@ -1,7 +1,6 @@
 language: ruby
 rvm:
   - "2.0.0"
+install: gem install rails
 gemfile:
   - gemfiles/gemfile-travis
-script:
-  - bundle exec rake
