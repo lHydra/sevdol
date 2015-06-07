@@ -1,8 +1,5 @@
 language: ruby
 rvm:
-  - "2.0.0"
-install:
-  - gem install rails
-  - bundle install
+  - "2.2.2"
 script:
   - bundle exec rake
