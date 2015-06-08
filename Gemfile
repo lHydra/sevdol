@@ -25,6 +25,11 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails'
 
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'factory_girl'
+end
+
 group :production do
   gem 'rails_12factor'
 end
