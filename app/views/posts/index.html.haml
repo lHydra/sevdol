@@ -1,0 +1,13 @@
+%h1 Галлерея
+
+- @posts.each do |post|
+  %div
+    %h2= link_to post.title, post
+    Изображение: #{post.body}
+    %p
+      = link_to 'Посмотреть', post
+      = link_to 'Редактировать', edit_post_path(post)
+      = link_to 'Удалить', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+    %hr
+
+= link_to 'New Post', new_post_path
