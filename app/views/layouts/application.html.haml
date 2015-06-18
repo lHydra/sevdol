@@ -1,0 +1,32 @@
+!!!
+%html
+  %head
+    %title Sevdol
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body  
+    .container
+      / Static navbar
+      %nav.navbar.navbar-default{:role => "navigation"}
+        .navbar-header
+          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.navbar-brand{:href => "/"} My Website
+        .navbar-collapse.collapse
+          %ul.nav.navbar-nav
+            %li
+              = link_to "Статьи", posts_path
+            %li
+              = link_to "Контакты", "Контакты"
+            %li
+              = link_to "О нас", "О нас"
+        / /.nav-collapse
+      %div
+        - if @error && @error.length > 0 then
+          .alert.alert-danger= @error
+        = yield
+
