@@ -25,6 +25,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'haml-rails'
 gem 'bootstrap-sass'
+gem 'carrierwave'
+gem 'rmagick'
 
 group :development, :test do
   gem 'rspec-rails'
