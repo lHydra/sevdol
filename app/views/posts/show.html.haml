@@ -1,6 +1,9 @@
 %p#notice= notice
 
 %p
+  %b Image:
+  = image_tag(@post.image_url(:thumb).to_s)
+%p
   %b Title:
   = @post.title
 %p

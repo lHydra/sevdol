@@ -15,5 +15,12 @@
   .field
     = f.label :user_id
     = f.number_field :user_id
+  %p
+  .field
+    = f.file_field :image
+  %p
+  .field
+    = f.label :remote_image_url, 'or image URL'
+    = f.text_field :remote_image_url
   .actions
     = f.submit 'Save'
