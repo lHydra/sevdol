@@ -3,7 +3,8 @@
 - @posts.each do |post|
   %div
     %h2= link_to post.title, post
-    Изображение: #{post.body}
+    %p= image_tag(post.image_url(:thumb).to_s)
+    %p= post.body
     %p
       = link_to 'Посмотреть', post
       = link_to 'Редактировать', edit_post_path(post)
