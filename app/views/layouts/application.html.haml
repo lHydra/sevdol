@@ -3,9 +3,8 @@
   %head
     %title Sevdol
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
-    = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body  
+  %body
     .container
       / Static navbar
       %nav.navbar.navbar-default{:role => "navigation"}
@@ -29,4 +28,4 @@
         - if @error && @error.length > 0 then
           .alert.alert-danger= @error
         = yield
-
+= javascript_include_tag 'application', 'data-turbolinks-track' => true
