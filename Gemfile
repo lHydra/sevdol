@@ -27,6 +27,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rmagick'
+gem 'responders'
 
 gem 'codeclimate-test-reporter', group: :test, require: nil
 
