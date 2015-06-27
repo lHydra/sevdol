@@ -27,7 +27,7 @@ gem 'haml-rails'
 gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rmagick'
-gem "responders"
+gem 'responders'
 
 group :development, :test do
   gem 'rspec-rails'
