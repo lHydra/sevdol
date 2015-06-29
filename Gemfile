@@ -28,6 +28,8 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rmagick'
 
+gem 'codeclimate-test-reporter', group: :test, require: nil
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl_rails'
