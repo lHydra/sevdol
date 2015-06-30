@@ -31,6 +31,12 @@ RSpec.describe PostsController, type: :controller do
   let(:valid_session) { {} }
   let!(:post) { create(:post) }
 
+  before(:each) do
+    Role.create(id: 1, name: 'admin')
+    @user = create(:user, role_id: 1)
+    sign_in @user
+  end
+
   describe "GET #index" do
     it "assigns all posts as @posts" do
       get(:index, {}, valid_session)
@@ -137,7 +143,7 @@ RSpec.describe PostsController, type: :controller do
 
   describe "DELETE #destroy" do
     let(:subject) { -> { delete(:destroy, { id: post.id }, valid_session) } }
-      
+
     it "destroys the requested post" do
       is_expected.to change(Post, :count).by(-1)
       expect(response).to redirect_to(posts_url)
