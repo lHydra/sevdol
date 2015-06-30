@@ -2,30 +2,41 @@
 %html
   %head
     %title Sevdol
-    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
     .container
       / Static navbar
-      %nav.navbar.navbar-default{:role => "navigation"}
+      %nav.navbar.navbar-default{role: 'navigation'}
         .navbar-header
-          %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
+          %button.navbar-toggle{'data-target' => '.navbar-collapse', 'data-toggle' => 'collapse', type: 'button'}
             %span.sr-only Toggle navigation
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.navbar-brand{:href => "/"} My Website
+          %a.navbar-brand{href: '/'} My Website
         .navbar-collapse.collapse
           %ul.nav.navbar-nav
             %li
-              = link_to "Статьи", posts_path
+              = link_to 'Статьи', posts_path
             %li
-              = link_to "Контакты", "Контакты"
+              = link_to 'Контакты', 'Контакты'
             %li
-              = link_to "О нас", "О нас"
+              = link_to 'О нас', 'О нас'
+          %ul.nav.navbar-nav.navbar-right
+            - if user_signed_in?
+              %li
+                = link_to "Выйти, #{current_user.username}", destroy_user_session_path, method: :delete
+            - else
+              %li
+                = link_to 'Войти', new_user_session_path
+              %li
+                = link_to 'Зарегистрироваться', new_user_registration_path
         / /.nav-collapse
       %div
-        - if @error && @error.length > 0 then
-          .alert.alert-danger= @error
+        - if flash[:notice]
+          .alert.alert-success= flash[:notice]
+        - if flash[:alert]
+          .alert.alert-danger= flash[:alert]
         = yield
 = javascript_include_tag 'application', 'data-turbolinks-track' => true
