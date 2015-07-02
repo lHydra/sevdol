@@ -28,6 +28,7 @@ gem 'bootstrap-sass'
 gem 'carrierwave'
 gem 'rmagick'
 gem 'responders'
+gem 'devise'
 
 gem 'codeclimate-test-reporter', group: :test, require: nil
 
