@@ -1,0 +1,6 @@
+$("<%= escape_javascript(image_tag(@post.image_url.to_s, class: 'modal-image')) %>").appendTo('.modal-body');
+$('#modal_post').modal('show');
+
+$('body').on('hidden.bs.modal', '.modal', function () {
+  $('.modal-image').remove();
+});

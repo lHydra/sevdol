@@ -1,6 +1,6 @@
 %p
   %b Image:
-  = link_to image_tag(@post.image_url(:thumb).to_s), '#', class: 'image'
+  = link_to image_tag(@post.image_url(:thumb).to_s), '#', id: 'image'
 %p
   %b Title:
   = @post.title
