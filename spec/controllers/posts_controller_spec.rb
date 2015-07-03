@@ -31,8 +31,9 @@ RSpec.describe PostsController, type: :controller do
   let(:valid_session) { {} }
   let!(:post) { create(:post) }
 
-  before (:each) do
-    @user = FactoryGirl.create(:user)
+  before(:each) do
+    Role.create(id: 1, name: 'admin')
+    @user = FactoryGirl.create(:user, role_id: 1)
     sign_in @user
   end
 
