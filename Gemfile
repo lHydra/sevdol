@@ -29,6 +29,7 @@ gem 'carrierwave'
 gem 'rmagick'
 gem 'responders'
 gem 'devise'
+gem 'cancancan'
 
 gem 'codeclimate-test-reporter', group: :test, require: nil
 
