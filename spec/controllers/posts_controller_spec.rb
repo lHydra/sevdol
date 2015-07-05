@@ -33,7 +33,7 @@ RSpec.describe PostsController, type: :controller do
 
   before(:each) do
     Role.create(id: 1, name: 'admin')
-    @user = FactoryGirl.create(:user, role_id: 1)
+    @user = create(:user, role_id: 1)
     sign_in @user
   end
 
