@@ -11,7 +11,9 @@
             %p= post.body
             %p
               = link_to 'Посмотреть', post
-              = link_to 'Редактировать', edit_post_path(post)
-              = link_to 'Удалить', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
-
-= link_to 'New Post', new_post_path
+              - if can? :edit, post
+                = link_to 'Редактировать', edit_post_path(post)
+              - if can? :delete, post
+                = link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' }
+-if can? :create, @post
+  = link_to 'New Post', new_post_path
