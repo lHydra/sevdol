@@ -8,11 +8,7 @@ class User < ActiveRecord::Base
          :trackable,
          :validatable
 
-  def role?(name)
-    if role_id == 1 && name == 'admin'
-      return true
-    else
-      return false
-    end
+  def admin?
+    return role_id == 1
   end
 end

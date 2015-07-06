@@ -12,15 +12,15 @@ RSpec.describe 'Ability', type: :contoller do
     end
 
     it 'admin can destroy post' do
-      assert @ability.can?(:destroy, :post)
+      expect(@ability).to be_able_to(:destroy, :post)
     end
 
     it 'admin can create new post' do
-      assert @ability.can?(:create, :post)
+      expect(@ability).to be_able_to(:create, :post)
     end
 
     it 'admin can edit post' do
-      assert @ability.can?(:edit, :post)
+      expect(@ability).to be_able_to(:edit, :post)
     end
   end
 
@@ -31,15 +31,15 @@ RSpec.describe 'Ability', type: :contoller do
     end
 
     it 'guest cannot destroy post' do
-      assert @ability.cannot?(:destroy, :post)
+      expect(@ability).not_to be_able_to(:destroy, :post)
     end
 
     it 'guest cannot create new post' do
-      assert @ability.cannot?(:create, :post)
+      expect(@ability).not_to be_able_to(:create, :post)
     end
 
     it 'guest cannot edit post' do
-      assert @ability.cannot?(:edit, :post)
+      expect(@ability).not_to be_able_to(:edit, :post)
     end
   end
 end
