@@ -5,13 +5,20 @@
     -posts_row.each do |post|
       .col-xs-6.col-md-4
         .thumbnail
-          = image_tag(post.image_url(:thumb).to_s)
+          = link_to image_tag(post.image_url(:thumb).to_s), post, id: 'image', remote: true
           .caption
             %h3= post.title
             %p= post.body
             %p
               = link_to 'Посмотреть', post
               = link_to 'Редактировать', edit_post_path(post)
-              = link_to 'Удалить', post, :method => :delete, :data => { :confirm => 'Are you sure?' }
+              = link_to 'Удалить', post, method: :delete, data: { confirm: 'Are you sure?' }
 
 = link_to 'New Post', new_post_path
+
+//modal-window
+#modal_post.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-body
+        %button.close#closebtn{ aria: { hidden: true }, data: { dismiss: :modal }, type: 'button' } ×

@@ -6,5 +6,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
   self.responder = AppResponder
-  respond_to :html
+  respond_to :html, :js, :json
 end
