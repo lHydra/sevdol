@@ -32,16 +32,17 @@ $white: #fefefe;
 
 /* adaptive image in a modal box */
 .modal-image {
-  height: auto;
-  max-width: 100%;
+  height: 100%;
+  width: 100%;
 }
 
 .modal-dialog {
   background: $white;
-  max-width: 500px;
-  width: 80%;
+  width: 750px;
+  border-radius: 5px;
 }
 
 .modal-body {
   padding: 19px;
+  height: 666px;
 }
