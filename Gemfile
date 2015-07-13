@@ -29,6 +29,7 @@ gem 'rmagick'
 gem 'responders'
 gem 'devise'
 gem 'cancancan'
+gem 'fog'
 
 gem 'codeclimate-test-reporter', group: :test, require: nil
 
