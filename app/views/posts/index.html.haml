@@ -18,6 +18,8 @@
 -if can? :create, @post
   = link_to 'New Post', new_post_path
 
+%p= paginate @posts, theme: 'twitter-bootstrap-3'
+
 //modal-window
 #modal_post.modal.fade
   .modal-dialog
