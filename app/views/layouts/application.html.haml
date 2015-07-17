@@ -16,13 +16,6 @@
             %span.icon-bar
           = link_to "My Website", root_path, class: 'navbar-brand'
         .navbar-collapse.collapse
-          %ul.nav.navbar-nav
-            %li
-              = link_to 'Статьи', posts_path
-            %li
-              = link_to 'Контакты', 'Контакты'
-            %li
-              = link_to 'О нас', 'О нас'
           %ul.nav.navbar-nav.navbar-right
             - if user_signed_in?
               %li
