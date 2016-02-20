@@ -10,6 +10,8 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'posts#index'
+  get '/login/vk' => 'vks#new'
+  resources :vks
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

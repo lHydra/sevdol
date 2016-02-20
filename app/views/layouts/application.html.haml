@@ -22,6 +22,8 @@
                 = link_to "Выйти, #{current_user.email}", destroy_user_session_path, method: :delete
             - else
               %li
+                = link_to 'Войти с помощью ВК', login_vk_path
+              %li
                 = link_to 'Войти', new_user_session_path
         / /.nav-collapse
       %div

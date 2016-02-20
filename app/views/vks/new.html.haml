@@ -1,0 +1,12 @@
+= form_for @vk do |f|
+  .field
+    = f.label :login, class: { color: '#45688E' }
+    = f.text_field :login, class: 'form-control', placeholder: 'login'
+  %br
+  .field
+    = f.label :password
+    = f.text_field :password, class: 'form-control', placeholder: 'login'
+  %br
+  .actions
+    = f.button 'Log In', class: 'btn btn-primary'
+
